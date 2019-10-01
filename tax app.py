@@ -16,7 +16,7 @@ class MyApp(QMainWindow, Ui_MainWindow):
         try:
             price = int(self.pricebox.toPlainText())  # textbox is read in
         except Exception:
-            print('sorry, please enter a number')
+            self.errorbox.setText('sorry, please enter a number')
         tax = (self.taxrate.value())  # value reads from spinbox
         total_price = price + ((tax / 100) * price)
         total_price_string = "The total price with tax is: " + str(total_price)
